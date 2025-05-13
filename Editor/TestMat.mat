@@ -35,8 +35,8 @@ Material:
     - _Range: 7.05
     - _RangeB: 7.05
     m_Colors:
-    - _Color: {r: 1, g: 0, b: 0, a: 1}
-    - _ColorB: {r: 1, g: 0, b: 0, a: 1}
+    - _Color: {r: 1, g: 0.4235698, b: 0, a: 1}
+    - _ColorB: {r: 1, g: 0.42356977, b: 0, a: 1}
     - _Pow: {r: 1, g: 0, b: 1, a: 1}
     - _PowB: {r: 1, g: 0, b: 1, a: 1}
   m_BuildTextureStacks: []

@@ -18,6 +18,7 @@ public class ShaderSwitcherWindow : EditorWindow
     private List<string> newProps = new List<string>();
     private List<PropertyMapping> mappings = new List<PropertyMapping>();
     private Vector2 scrollPos;
+    private Material testMat;
 
     // Batch tab fields
     private List<ShaderSwitchMapping> batchMappings = new List<ShaderSwitchMapping>();
@@ -56,6 +57,7 @@ public class ShaderSwitcherWindow : EditorWindow
         // Load existing mapping asset
         EditorGUI.BeginChangeCheck();
         mappingAsset = (ShaderSwitchMapping)EditorGUILayout.ObjectField("Mapping Asset", mappingAsset, typeof(ShaderSwitchMapping), false);
+        testMat =  (Material)EditorGUILayout.ObjectField("testMat", testMat, typeof(Material), false);
         if (EditorGUI.EndChangeCheck() && mappingAsset != null)
         {
             oldShader = mappingAsset.oldShader;
@@ -124,8 +126,8 @@ public class ShaderSwitcherWindow : EditorWindow
         if (GUILayout.Button("Save Mapping Asset", GUILayout.ExpandWidth(false)))
             SaveMappingAsset();
 
-        if (GUILayout.Button("Switch Shader", GUILayout.ExpandWidth(false)))
-            SwitchShaders(mappings, oldShader, newShader);
+        if (GUILayout.Button("TestMat Switch Shader", GUILayout.ExpandWidth(false)))
+            ApplyToMaterial(testMat,oldShader, newShader, mappings);
         EditorGUILayout.EndHorizontal();
     }
 
