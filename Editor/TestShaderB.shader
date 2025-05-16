@@ -20,6 +20,10 @@ Shader "Unlit/TestShaderB"
             #pragma fragment frag
             // make fog work
             #pragma multi_compile_fog
+            #pragma shader_feature TestKeyA
+            #pragma shader_feature TestKeyB
+            #pragma shader_feature TestKey
+            #pragma multi_compile  TestKeyMUL
 
             #include "UnityCG.cginc"
 
